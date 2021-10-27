@@ -17,6 +17,16 @@ getUserNum();
 
 })
 
+function generaAlert(numRandom, arrRandomNum){
+    //genera 5 numeri casuali e inserisci in un array
+    let arrRandomNum = [];
+    for (let i = 0; i < 5; i++) {
+        let numRandom = generateRandomNum();
+        arrRandomNum.push(numRandom);
+    }
+    console.log(arrRandomNum);
+    alert(`Ricorda! i tuoi numeri sono: ${arrRandomNum[i]}`)
+}
 
 function getUserNum (userNum, arrUserNum){
     let arrUserNum = []
@@ -25,3 +35,8 @@ function getUserNum (userNum, arrUserNum){
         arrUserNum.push(userNum);
     }
 }
+
+function generateRandomNum (minNumber = 1, maxNumber = 100){
+    const randomNum = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+    return randomNum;
+  }
