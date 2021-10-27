@@ -14,8 +14,11 @@ window.addEventListener("DOMContentLoaded", function() {
     
    
     const arrNumeroRandom = generaAlert();
+    setTimeout(function(){
     const arrNumeroUtente = getUserNum();
     compareNumbers(arrNumeroRandom, arrNumeroUtente);
+    },2000);
+    
     //compareNumbers(generaAlert(), getUserNum())
 
 
