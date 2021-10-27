@@ -13,10 +13,10 @@ window.addEventListener("DOMContentLoaded", function() {
     console.log('DOM fully loaded and parsed')
     
    
-    generaAlert();
-    getUserNum();
-
-    
+    const arrNumeroRandom = generaAlert();
+    const arrNumeroUtente = getUserNum();
+    compareNumbers(arrNumeroRandom, arrNumeroUtente);
+    //compareNumbers(generaAlert(), getUserNum())
 
 
 })
@@ -33,9 +33,8 @@ function generaAlert(){
     }
     console.log(arrRandomNum);
     alert(`Ricorda! i tuoi numeri sono: ${arrRandomNum}`)
+    return arrRandomNum
 }
-
-
 
 function getUserNum (){
     let arrUserNum = []
@@ -45,6 +44,22 @@ function getUserNum (){
         arrUserNum.push(userNum);
     }
     console.log(arrUserNum);
+    return arrUserNum
+}
+
+function compareNumbers (arrayRandom, arrayUser){
+    //avendo i due array di numeri, arrRandomNum e arrUserNum, bisogna compararli
+    let arrNumCorretti = []
+    for (let i = 0; i < arrayRandom.length; i++) {
+        let numberUser = arrayUser[i];
+        let numberRandom = arrayRandom[i];
+        
+        if (numberUser === numberRandom){
+            arrNumCorretti.push(numberUser)
+        }
+    }
+    //voglio ottenere quanti numeri sono corretti e quali
+    alert(`Hai ricordato correttamente ${arrNumCorretti.length} numeri: ${arrNumCorretti}`)
 }
 
 function generateRandomNum (minNumber = 1, maxNumber = 100){
